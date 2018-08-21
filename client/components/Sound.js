@@ -1,6 +1,7 @@
 import React from 'react';
 import Buttons from './Buttons';
 import Volume from './Volume';
+import Slider from './Slider';
 import Reverb from './Reverb';
 import Panning from './Panning';
 import Delay from './Delay';
@@ -12,13 +13,31 @@ const Sound = ({ name, wad }) => (
     </div>
     <Buttons sound={wad} />
     <div className="col-4 mb-3">
-      <Volume setValue={(...args) => wad.setVolume(...args)} />
+      <Slider
+        name="volume"
+        min="0"
+        max="100"
+        defaultValue="100"
+        setValue={(...args) => wad.setVolume(...args)}
+      />
     </div>
     <div className="col-4 mb-3 reverb">
-      <Reverb setValue={(...args) => wad.setReverb(...args)} />
+      <Slider
+        name="reverb"
+        min="0"
+        max="100"
+        defaultValue="0"
+        setValue={(...args) => wad.setReverb(...args)}
+      />
     </div>
     <div className="col-4 mb-3 panning">
-      <Panning setValue={(...args) => wad.setPanning(...args)} />
+      <Slider
+        name="panning"
+        min="-100"
+        max="100"
+        defaultValue="0"
+        setValue={(...args) => wad.setPanning(...args)}
+      />
     </div>
     <Delay setValue={(...args) => wad.setDelay(...args)} />
   </div>

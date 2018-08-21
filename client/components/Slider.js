@@ -3,27 +3,33 @@ import React, { Component, Fragment } from 'react';
 class Slider extends Component {
   constructor() {
     super();
-    this.state = { volume: 100 };
+    this.state = { value: 0 };
+  }
+
+  componentDidMount() {
+    const { defaultValue } = this.props;
+    this.setState({ value: defaultValue });
   }
 
   handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
+    const { value } = event.target;
+    this.setState({ value });
   };
 
   render() {
-    const { volume } = this.state;
-    this.props.setValue(volume / 100);
+    const { name, min, max } = this.props;
+    const { value } = this.state;
+    this.props.setValue(value / 100);
 
     return (
       <Fragment>
-        <label htmlFor="volume">Volume</label>
+        <label htmlFor={name}>{name.toUpperCase()}</label>
         <input
-          name="volume"
+          name={name}
           type="range"
-          min="0"
-          max="100"
-          value={this.state.volume}
+          min={min}
+          max={max}
+          value={this.state.value}
           onChange={this.handleChange}
         />
       </Fragment>
