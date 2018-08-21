@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 class Volume extends Component {
   constructor() {
@@ -9,14 +9,14 @@ class Volume extends Component {
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
-
-    const { volume } = this.state;
-    this.props.sound.setVolume(volume / 100);
   };
 
   render() {
+    const { volume } = this.state;
+    this.props.setValue(volume / 100);
+
     return (
-      <div className="col-4 mb-3">
+      <Fragment>
         <label htmlFor="volume">Volume</label>
         <input
           name="volume"
@@ -26,7 +26,7 @@ class Volume extends Component {
           value={this.state.volume}
           onChange={this.handleChange}
         />
-      </div>
+      </Fragment>
     );
   }
 }

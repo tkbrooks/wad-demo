@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react';
 
-class Panning extends Component {
+class Slider extends Component {
   constructor() {
     super();
-    this.state = { panning: 0 };
+    this.state = { volume: 100 };
   }
 
   handleChange = event => {
@@ -12,18 +12,18 @@ class Panning extends Component {
   };
 
   render() {
-    const { panning } = this.state;
-    this.props.setValue(panning / 100);
+    const { volume } = this.state;
+    this.props.setValue(volume / 100);
 
     return (
       <Fragment>
-        <label htmlFor="panning">Panning</label>
+        <label htmlFor="volume">Volume</label>
         <input
-          name="panning"
+          name="volume"
           type="range"
-          min="-100"
+          min="0"
           max="100"
-          value={this.state.panning}
+          value={this.state.volume}
           onChange={this.handleChange}
         />
       </Fragment>
@@ -31,4 +31,4 @@ class Panning extends Component {
   }
 }
 
-export default Panning;
+export default Slider;

@@ -2,10 +2,6 @@
   "extends": "fullstack",
   "parser": "babel-eslint",
   "rules": {
-    "semi": [1, "always"],
-    "no-undef": 0,
-    "no-unused-vars": 0,
-    "id-length": 0,
-    "react/no-did-mount-set-state": 0
+    "semi": [1, "always"]
   }
 }

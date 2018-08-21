@@ -13,16 +13,12 @@ class Delay extends Component {
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
-
-    const { delayTime, delayWet, delayFeedback } = this.state;
-    this.props.sound.setDelay(
-      delayTime / 100,
-      delayWet / 100,
-      delayFeedback / 100
-    );
   };
 
   render() {
+    const { delayTime, delayWet, delayFeedback } = this.state;
+    this.props.setValue(delayTime / 100, delayWet / 100, delayFeedback / 100);
+
     return (
       <Fragment>
         <div className="col-4 mb-3 delay">

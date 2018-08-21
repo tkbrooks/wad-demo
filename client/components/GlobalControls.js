@@ -1,21 +1,7 @@
 import React, { Component } from 'react';
+import Volume from './Volume';
 
 class GlobalControls extends Component {
-  constructor() {
-    super();
-    this.state = { volume: 100 };
-  }
-
-  handleChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
-
-    if (event.target.name === 'volume') {
-      const volume = this.state.volume / 100;
-      this.props.mix.setVolume(volume);
-    }
-  };
-
   playMix = () => {
     this.props.mix.play({ loop: true });
   };
@@ -31,15 +17,7 @@ class GlobalControls extends Component {
           <h4>Global Controls</h4>
         </div>
         <div className="col-12">
-          <label htmlFor="volume">Volume</label>
-          <input
-            name="volume"
-            type="range"
-            min="0"
-            max="100"
-            value={this.state.volume}
-            onChange={this.handleChange}
-          />
+          <Volume setValue={(...args) => this.props.mix.setVolume(...args)} />
         </div>
         <div className="col-6 mt-4">
           <button

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 class Reverb extends Component {
   constructor() {
@@ -9,14 +9,14 @@ class Reverb extends Component {
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
-
-    const { reverb } = this.state;
-    this.props.sound.setReverb(reverb / 100);
   };
 
   render() {
+    const { reverb } = this.state;
+    this.props.setValue(reverb / 100);
+
     return (
-      <div className="col-4 mb-3 reverb">
+      <Fragment>
         <label htmlFor="reverb">Reverb Wet</label>
         <input
           name="reverb"
@@ -26,7 +26,7 @@ class Reverb extends Component {
           value={this.state.reverb}
           onChange={this.handleChange}
         />
-      </div>
+      </Fragment>
     );
   }
 }
