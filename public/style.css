@@ -1,0 +1,23 @@
+input[type='range'] {
+  display: block;
+  width: 100%;
+  -webkit-appearance: none;
+  background-color: black;
+  height: 2px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.delay {
+  color: rgb(0, 73, 156);
+}
+
+.reverb {
+  color: rgb(156, 16, 16);
+}
+
+.panning {
+  color: rgb(0, 128, 85);
+}
