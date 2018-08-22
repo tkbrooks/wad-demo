@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Volume from './Volume';
+import Slider from './Slider';
 
 class GlobalControls extends Component {
   playMix = () => {
@@ -17,7 +17,13 @@ class GlobalControls extends Component {
           <h4>Global Controls</h4>
         </div>
         <div className="col-12">
-          <Volume setValue={(...args) => this.props.mix.setVolume(...args)} />
+          <Slider
+            name="volume"
+            min="0"
+            max="100"
+            defaultValue="100"
+            setValue={(...args) => this.props.mix.setVolume(...args)}
+          />
         </div>
         <div className="col-6 mt-4">
           <button

@@ -1,9 +1,6 @@
 import React from 'react';
 import Buttons from './Buttons';
-import Volume from './Volume';
 import Slider from './Slider';
-import Reverb from './Reverb';
-import Panning from './Panning';
 import Delay from './Delay';
 
 const Sound = ({ name, wad }) => (
