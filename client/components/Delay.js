@@ -28,7 +28,7 @@ class Delay extends Component {
             type="range"
             min="0"
             max="100"
-            value={this.state.delayTime}
+            value={delayTime}
             onChange={this.handleChange}
           />
         </div>
@@ -39,7 +39,7 @@ class Delay extends Component {
             type="range"
             min="0"
             max="100"
-            value={this.state.delayWet}
+            value={delayWet}
             onChange={this.handleChange}
           />
         </div>
@@ -50,7 +50,7 @@ class Delay extends Component {
             type="range"
             min="0"
             max="100"
-            value={this.state.delayFeedback}
+            value={delayFeedback}
             onChange={this.handleChange}
           />
         </div>

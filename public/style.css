@@ -21,3 +21,8 @@ input:focus {
 .panning {
   color: rgb(0, 128, 85);
 }
+
+#controls {
+  background-color: rgb(225, 225, 225); 
+  border-radius: 15px;
+}

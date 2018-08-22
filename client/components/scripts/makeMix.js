@@ -28,6 +28,8 @@ const makeMix = mixSounds => {
       }
     });
 
+    wad.name = name;
+
     mix.add(wad);
   });
 

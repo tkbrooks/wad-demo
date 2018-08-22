@@ -1,4 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
+import sliderTypes from './scripts/sliderTypes';
+
+const defaultWidth = '4';
 
 class Slider extends Component {
   constructor() {
@@ -7,8 +10,8 @@ class Slider extends Component {
   }
 
   componentDidMount() {
-    const { defaultValue } = this.props;
-    this.setState({ value: defaultValue });
+    const { type } = this.props;
+    this.setState({ value: sliderTypes[type].defaultValue });
   }
 
   handleChange = event => {
@@ -17,22 +20,24 @@ class Slider extends Component {
   };
 
   render() {
-    const { name, min, max } = this.props;
+    const { type, setValue, width = defaultWidth } = this.props;
+    const { name, min, max } = sliderTypes[type];
+
     const { value } = this.state;
-    this.props.setValue(value / 100);
+    setValue(value / 100);
 
     return (
-      <Fragment>
-        <label htmlFor={name}>{name[0].toUpperCase() + name.slice(1)}</label>
+      <div className={`col-${width} mb-3 ${type}`}>
+        <label htmlFor={type}>{name}</label>
         <input
-          name={name}
+          name={type}
           type="range"
           min={min}
           max={max}
-          value={this.state.value}
+          value={value}
           onChange={this.handleChange}
         />
-      </Fragment>
+      </div>
     );
   }
 }

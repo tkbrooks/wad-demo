@@ -1,25 +1,28 @@
 import React, { Component, Fragment } from 'react';
 
 class Buttons extends Component {
-  playSound = () => {
+  play = () => {
     this.props.sound.play({ loop: true });
   };
 
-  stopSound = () => {
+  stop = () => {
     this.props.sound.stop();
   };
 
   render() {
     return (
       <Fragment>
+        <div className="col-8 mb-3">
+          <h4>{this.props.title}</h4>
+        </div>
         <div className="col-2 mb-3">
           <button
             className="btn btn-primary float-right"
             name="start"
             type="button"
-            onClick={this.playSound}
+            onClick={this.play}
           >
-            Play Sound
+            Play
           </button>
         </div>
         <div className="col-2 mb-3">
@@ -27,9 +30,9 @@ class Buttons extends Component {
             className="btn btn-danger float-right"
             name="stop"
             type="button"
-            onClick={this.stopSound}
+            onClick={this.stop}
           >
-            Stop Sound
+            Stop
           </button>
         </div>
       </Fragment>

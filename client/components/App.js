@@ -3,7 +3,7 @@ import GlobalControls from './GlobalControls';
 import Sound from './Sound';
 import makeMix from './scripts/makeMix';
 
-class Main extends Component {
+class App extends Component {
   constructor() {
     super();
     this.state = { mix: { wads: [] } };
@@ -26,16 +26,14 @@ class Main extends Component {
     return mix.wads.length ? (
       <div className="container mt-3">
         <GlobalControls mix={mix} />
-        {mix.wads.map(wad => {
-          const sliceIndex = wad.source.lastIndexOf('/') + 1;
-          const name = wad.source.slice(sliceIndex);
-          return <Sound key={name} name={name} wad={wad} />;
-        })}
+        {mix.wads.map(wad => (
+          <Sound key={wad.name} name={wad.name} wad={wad} />
+        ))}
       </div>
     ) : (
-      <div>LOADING...</div>
+      <h1>LOADING...</h1>
     );
   }
 }
 
-export default Main;
+export default App;
