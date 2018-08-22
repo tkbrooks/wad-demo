@@ -23,7 +23,7 @@ class Slider extends Component {
 
     return (
       <Fragment>
-        <label htmlFor={name}>{name.toUpperCase()}</label>
+        <label htmlFor={name}>{name[0].toUpperCase() + name.slice(1)}</label>
         <input
           name={name}
           type="range"

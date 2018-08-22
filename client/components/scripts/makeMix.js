@@ -1,6 +1,6 @@
 import Wad from 'web-audio-daw';
 
-const makeMix = (mixSounds, url) => {
+const makeMix = mixSounds => {
   const mix = new Wad.Poly({
     compressor: {
       attack: 0.05, // The amount of time, in seconds, to reduce the gain by 10dB. This parameter ranges from 0 to 1.
@@ -13,13 +13,13 @@ const makeMix = (mixSounds, url) => {
 
   mixSounds.forEach(({ name, reverb }) => {
     const wad = new Wad({
-      source: `${url}/sounds/${name}.wav`,
+      source: `${window.location.href}/sounds/${name}.wav`,
       env: {
         hold: 300
       },
       reverb: {
         wet: 0,
-        impulse: `${url}/impulses/${reverb}.wav`
+        impulse: `${window.location.href}/impulses/${reverb}.wav`
       },
       delay: {
         delayTime: 0,

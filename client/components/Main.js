@@ -10,14 +10,13 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    const url = window.location.href;
     // http://www.voxengo.com/impulses/
     const mixSounds = [];
     mixSounds.push({ name: 'synth', reverb: 'Musikvereinsaal' });
     mixSounds.push({ name: 'perc', reverb: 'Scala Milan Opera Hall' });
     mixSounds.push({ name: 'bass', reverb: 'Masonic Lodge' });
 
-    const mix = makeMix(mixSounds, url);
+    const mix = makeMix(mixSounds);
     this.setState({ mix });
   }
 
