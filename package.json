@@ -15,7 +15,6 @@
     "express": "^4.16.3",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
-    "react-router-dom": "^4.2.2",
     "volleyball": "^1.4.1",
     "web-audio-daw": "^4.2.0"
   },
