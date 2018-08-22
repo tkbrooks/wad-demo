@@ -1,7 +1,7 @@
 {
-  "name": "techtalk-wad",
-  "version": "0.0.1",
-  "description": "Tech Talk - Wad",
+  "name": "wad-demo",
+  "version": "0.0.2",
+  "description": "Wad Demo",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,8 +9,8 @@
     "start": "node server/app.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Tyler Brooks",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.16.3",
     "react": "^16.3.1",
