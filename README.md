@@ -1,4 +1,4 @@
-This is a quick demo of Wad.js using React.
+This is a quick demo of Wad.js built with React.
 
 The project video demonstration is located here:  https://youtu.be/KBurf-pTwLA?t=919
 
